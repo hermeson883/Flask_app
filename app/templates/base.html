@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.3/examples/jumbotron-narrow/">
+
+    <title>Flasker</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">About</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Flasker</h3>
+      </div>
+
+      <div class='alert alert-warning'>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+      </div>
+
+      {%block content%}
+      {% endblock %}
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src=""></script>
+  </body>
+</html>
